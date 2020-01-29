@@ -38,7 +38,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Arm_basis/meshes/base_link.STL" />
+          filename="package://arm_description/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -52,7 +52,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Arm_basis/meshes/base_link.STL" />
+          filename="package://arm_description/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -79,7 +79,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Arm_basis/meshes/L1.STL" />
+          filename="package://arm_description/meshes/L1.STL" />
       </geometry>
       <material
         name="">
@@ -93,7 +93,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Arm_basis/meshes/L1.STL" />
+          filename="package://arm_description/meshes/L1.STL" />
       </geometry>
     </collision>
   </link>
@@ -151,7 +151,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Arm_basis/meshes/L2.STL" />
+          filename="package://arm_description/meshes/L2.STL" />
       </geometry>
       <material
         name="">
@@ -165,7 +165,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Arm_basis/meshes/L2.STL" />
+          filename="package://arm_description/meshes/L2.STL" />
       </geometry>
     </collision>
   </link>i
@@ -211,7 +211,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Arm_basis/meshes/L3.STL" />
+          filename="package://arm_description/meshes/L3.STL" />
       </geometry>
       <material
         name="">
@@ -225,7 +225,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Arm_basis/meshes/L3.STL" />
+          filename="package://arm_description/meshes/L3.STL" />
       </geometry>
     </collision>
   </link>
