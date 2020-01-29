@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- Load joints controllers configurations -->
+  <rosparam file="$(find arm_movit)/controller/arm_controller_blitz.yaml" command="load"/>
+
+  <!-- Load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="
+        joint_state_controller
+        arm_controller"/>
+
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+
+
+</launch>
