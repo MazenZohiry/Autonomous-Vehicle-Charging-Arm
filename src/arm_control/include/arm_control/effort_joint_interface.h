@@ -1,12 +1,13 @@
 #include "ros/ros.h"
 #include <kdl/jntarrayvel.hpp>
+#include <memory>
 #include <arm_control/Efforts.h>
 #include <kdl_parser/kdl_parser.hpp>
 #include <realtime_tools/realtime_publisher.h>
 #include <kdl/chainidsolver_recursive_newton_euler.hpp>
 #include <trajectory_interface/quintic_spline_segment.h>
 #include <joint_trajectory_controller/joint_trajectory_controller.h>
-
+#include <boost/scoped_ptr.hpp>
 namespace joint_trajectory_controller
 {
     typedef trajectory_interface::QuinticSplineSegment<double> SegmentImpl;

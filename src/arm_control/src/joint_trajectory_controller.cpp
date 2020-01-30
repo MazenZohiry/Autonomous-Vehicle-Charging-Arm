@@ -1,5 +1,6 @@
 #include <arm_control/effort_joint_interface.h>
 #include <pluginlib/class_list_macros.h>
+#include <memory>
 
 namespace arm_control
 {
