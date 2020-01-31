@@ -3,6 +3,7 @@
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="arm_description">
+
     <link name="world">
     </link>
 
@@ -170,7 +171,7 @@
 <transmission name="trans_J1">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="J1">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="J1_motor">
             <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -180,7 +181,7 @@
     <transmission name="trans_J2">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="J2">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="J2_motor">
             <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -190,7 +191,7 @@
     <transmission name="trans_J3">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="J3">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="J3_motor">
             <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -200,7 +201,7 @@
     <transmission name="trans_J4">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="J4">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="J4_motor">
             <hardwareInterface>EffortJointInterface</hardwareInterface>
