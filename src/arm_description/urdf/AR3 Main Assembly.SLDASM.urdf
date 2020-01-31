@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-1.15397205339578E-05 -0.10213687957753 0.0256683807735144"
+        xyz="-1.154E-05 0.025668 0.10214"
         rpy="0 0 0" />
       <mass
-        value="0.66695527839868" />
+        value="0.66696" />
       <inertia
-        ixx="0.00200785375472586"
-        ixy="8.95894771130559E-07"
-        ixz="-4.55457901869508E-07"
-        iyy="0.0015409663357719"
-        iyz="5.63870746638961E-05"
-        izz="0.00329186572157014" />
+        ixx="0.0020079"
+        ixy="-4.5546E-07"
+        ixz="-8.9589E-07"
+        iyy="0.0032919"
+        iyz="-5.6387E-05"
+        izz="0.001541" />
     </inertial>
     <visual>
       <origin
@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/base_link.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/base_link.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/Link1.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/Link1.STL" />
       </geometry>
       <material
         name="">
@@ -80,13 +80,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/Link1.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/Link1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="J1"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 0 0.0867"
       rpy="3.1416 0 1.5708" />
@@ -96,17 +96,6 @@
       link="Link1" />
     <axis
       xyz="0 0 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
-    <calibration
-      rising="0"
-      falling="0" />
-    <dynamics
-      damping="0"
-      friction="0" />
   </joint>
   <link
     name="Link2">
@@ -130,7 +119,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/Link2.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/Link2.STL" />
       </geometry>
       <material
         name="">
@@ -144,13 +133,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/Link2.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/Link2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="J2"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.064146 -0.007968 -0.083075"
       rpy="1.5708 0.5236 3.1416" />
@@ -160,17 +149,6 @@
       link="Link2" />
     <axis
       xyz="0 0 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
-    <calibration
-      rising="0"
-      falling="0" />
-    <dynamics
-      damping="0"
-      friction="0" />
   </joint>
   <link
     name="Link_3">
@@ -194,7 +172,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/Link_3.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/Link_3.STL" />
       </geometry>
       <material
         name="">
@@ -208,13 +186,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/Link_3.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/Link_3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="J3"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.1525 -0.26414 -0.028745"
       rpy="3.1416 0 1.5708" />
@@ -224,17 +202,6 @@
       link="Link_3" />
     <axis
       xyz="0 0 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
-    <calibration
-      rising="0"
-      falling="0" />
-    <dynamics
-      damping="0"
-      friction="0" />
   </joint>
   <link
     name="Link4">
@@ -258,7 +225,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/Link4.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/Link4.STL" />
       </geometry>
       <material
         name="">
@@ -272,13 +239,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://arm_description/meshes/Link4.STL" />
+          filename="package://AR3 Main Assembly.SLDASM/meshes/Link4.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="J4"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.011681 0.020231 -0.0367"
       rpy="1.0472 -1.5708 0" />
@@ -288,16 +255,5 @@
       link="Link4" />
     <axis
       xyz="0 0 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
-    <calibration
-      rising="0"
-      falling="0" />
-    <dynamics
-      damping="0"
-      friction="0" />
   </joint>
 </robot>
