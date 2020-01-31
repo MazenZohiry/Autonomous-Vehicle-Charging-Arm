@@ -10,7 +10,7 @@
 
  
 	<link name="base_link">
-        
+        <gravity> 0 </gravity>
 <inertial>
             <origin xyz="-1.15397205339615E-05 -0.10213687957753 0.0256683807735144" rpy="0 0 0" />
             <mass value="0.66695527839868" />
@@ -44,7 +44,6 @@
  
  
     <link name="Link1">
-        
 <inertial>
             <origin xyz="0.032141 -0.0063693 -0.020838" rpy="0 0 0" />
             <mass value="0.51011" />
@@ -74,8 +73,9 @@
         <axis xyz="0 0 1" />
         <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
     </joint>
+
+
     <link name="Link2">
-        
 <inertial>
             <origin xyz="0.080422 -0.13477 -0.053585" rpy="0 0 0" />
             <mass value="0.53035" />
@@ -105,8 +105,9 @@
         <axis xyz="0 0 1" />
         <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
     </joint>
+
+
     <link name="Link3">
-        
 <inertial>
             <origin xyz="-0.00102555575202164 -0.00387982974471979 -0.0464271182276246" rpy="0 0 0" />
             <mass value="0.139370701456675" />
@@ -136,8 +137,9 @@
         <axis xyz="0 0.01527 -0.99988" />
         <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
     </joint>
+
+
     <link name="Link4">
-        
 <inertial>
             <origin xyz="-0.00392412669689435 0.00112688757108009 0.090746722191295" rpy="0 0 0" />
             <mass value="0.290695240644425" />
@@ -210,5 +212,20 @@
     </transmission>
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+    </gazebo>
+    <gazebo reference="base_link">
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="Link1">
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="Link2">
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="Link3">
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="Link4">
+        <turnGravityOff>true</turnGravityOff>
     </gazebo>
 </robot>
