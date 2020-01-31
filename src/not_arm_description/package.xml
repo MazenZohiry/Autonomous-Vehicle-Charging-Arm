@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>arm_description</name>
+  <name>not_arm_description</name>
   <version>0.0.0</version>
   <description>The arm_description package</description>
 

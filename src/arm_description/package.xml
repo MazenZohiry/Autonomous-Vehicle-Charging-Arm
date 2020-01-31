@@ -1,5 +1,5 @@
 <package format="2">
-  <name>AR3 Main Assembly.SLDASM</name>
+  <name>arm_description</name>
   <version>1.0.0</version>
   <description>
     <p>URDF Description package for AR3 Main Assembly.SLDASM</p>
