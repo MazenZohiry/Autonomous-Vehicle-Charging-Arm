@@ -6,7 +6,7 @@
     default="False" />
   <param
     name="robot_description"
-    textfile="$(find arm_description)/urdf/AR3 Main Assembly.SLDASM.urdf" />
+    textfile="$(find arm_description)/urdf/arm_description.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />

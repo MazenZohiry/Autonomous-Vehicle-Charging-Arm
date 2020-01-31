@@ -2,9 +2,9 @@
   <name>arm_description</name>
   <version>1.0.0</version>
   <description>
-    <p>URDF Description package for AR3 Main Assembly.SLDASM</p>
+    <p>URDF Description package for arm_description</p>
     <p>This package contains configuration data, 3D models and launch files
-for AR3 Main Assembly.SLDASM robot</p>
+for arm_description robot</p>
   </description>
   <author>TODO</author>
   <maintainer email="TODO@email.com" />
