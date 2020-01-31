@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(AR3 Main Assembly.SLDASM)
+project(arm_description)
 
 find_package(catkin REQUIRED)
 
