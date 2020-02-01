@@ -211,8 +211,11 @@
         </actuator>
     </transmission>
     <gazebo>
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+	    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+	   <robotNamespace>/Robot</robotNamespace>
+           </plugin>    
     </gazebo>
+
     <gazebo reference="base_link">
         <turnGravityOff>true</turnGravityOff>
     </gazebo>
