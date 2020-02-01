@@ -19,22 +19,48 @@ hardware_interface:
 joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
-controller_list:
-               [j1_controller, j2_controller, j3_controller, j4_controller]
-j1_controller:
-  type: effort_controllers/JointTrajectoryController
-  joint: J1
-  pid: {p: 10,  d: 0.1, i: 0.1}
-j2_controller:   
-  type: effort_controllers/JointTrajectoryController
-  joint: J2
-  pid: {p: 10,  d: 0.1, i: 0.1}
-j3_controller:   
-  type: effort_controllers/JointTrajectoryController
-  joint: J3
-  pid: {p: 10,  d: 0.1, i: 0.1}
-j4_controller:   
-  type: effort_controllers/JointTrajectoryController
-  joint: J4
-  pid: {p: 10,  d: 0.1, i: 0.1}
+# j1_controller:
+#   type: effort_controllers/JointGroupPositionController
+#   joint: J1
+#   pid: {p: 10,  d: 0.1, i: 0.1}
+# j2_controller:
+#   type: effort_controllers/JointGroupPositionController
+#   joint: J2
+#   pid: {p: 10,  d: 0.1, i: 0.1}
+# j3_controller:
+#   type: effort_controllers/JointGroupPositionController
+#   joint: J3
+#   pid: {p: 10,  d: 0.1, i: 0.1}
+# j4_controller:
+#   type: effort_controllers/JointGroupPositionController
+#   joint: J4
+#   pid: {p: 10,  d: 0.1, i: 0.1}
 
+my_arm_controller:
+    type: effort_controllers/JointEffortController
+    joints:
+      - J1
+      - J2
+      - J3
+      - J4
+    gains:
+      J1:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      J2:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      J3:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      J4:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
