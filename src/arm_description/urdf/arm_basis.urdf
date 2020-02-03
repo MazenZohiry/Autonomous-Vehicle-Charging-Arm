@@ -35,7 +35,7 @@
     </link>
  
  
-     <joint name="fixed" type="fixed">
+     <joint name="virtual_joint" type="fixed">
         <origin xyz="0 0 0"  />
         <parent link="world" />
         <child link="base_link" />
@@ -67,11 +67,11 @@
         </collision>
     </link>
     <joint name="J1" type="revolute">
-        <origin xyz="0 0 0.0867" rpy="3.1416 0 1.5708" />
+        <origin xyz="0 0 0.0867" rpy="0 0 1.5708" />
         <parent link="base_link" />
         <child link="Link1" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
+        <limit lower="-3.141593" upper="3.141593" effort="40.0" velocity="0.2" />
     </joint>
 
 
@@ -99,11 +99,11 @@
         </collision>
     </link>
     <joint name="J2" type="revolute">
-        <origin xyz="0.064146 -0.007968 -0.083075" rpy="1.5708 0.5236 3.1416" />
+        <origin xyz="0.064146 -0.007968 -0.083075" rpy="1.5708 0.5236 0" />
         <parent link="Link1" />
         <child link="Link2" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
+        <limit lower="-3.141593" upper="3.141593" effort="40.0" velocity="0.2" />
     </joint>
 
 
@@ -135,7 +135,7 @@
         <parent link="Link2" />
         <child link="Link3" />
         <axis xyz="0 0.01527 -0.99988" />
-        <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
+        <limit lower="-3.141593" upper="3.141593" effort="40.0" velocity="0.2" />
     </joint>
 
 
@@ -167,7 +167,7 @@
         <parent link="Link3" />
         <child link="Link4" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
+        <limit lower="-3.141593" upper="3.141593" effort="40.0" velocity="0.2" />
     </joint>
     
 <transmission name="trans_J1">
