@@ -71,7 +71,7 @@
         <parent link="base_link" />
         <child link="Link1" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.141593" upper="3.141593" effort="40.0" velocity="0.2" />
+        <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
     </joint>
 
 
@@ -103,7 +103,7 @@
         <parent link="Link1" />
         <child link="Link2" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.141593" upper="3.141593" effort="40.0" velocity="0.2" />
+        <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
     </joint>
 
 
@@ -135,7 +135,7 @@
         <parent link="Link2" />
         <child link="Link3" />
         <axis xyz="0 0.01527 -0.99988" />
-        <limit lower="-3.141593" upper="3.141593" effort="40.0" velocity="0.2" />
+        <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
     </joint>
 
 
@@ -167,7 +167,7 @@
         <parent link="Link3" />
         <child link="Link4" />
         <axis xyz="0 0 -1" />
-        <limit lower="-3.141593" upper="3.141593" effort="40.0" velocity="0.2" />
+        <limit lower="-3.141593" upper="3.141593" effort="0" velocity="0.2" />
     </joint>
     
 <transmission name="trans_J1">
