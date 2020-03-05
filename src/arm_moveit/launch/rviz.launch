@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-   <!-- launch control.launch -->
+   <!-- launch ros_controllers.launch
   <include file="$(find arm_moveit)/launch/ros_controllers.launch"/>
-
+-->
   <!-- Rviz to vizualize robot -->
   <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d '$(find arm_moveit)/launch/moveit.rviz'" />
   
