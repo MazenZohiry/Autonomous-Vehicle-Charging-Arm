@@ -1,0 +1,8 @@
+prefix=/home/nasr/robotics/my_arm/install
+
+Name: not_arm_description
+Description: Description of not_arm_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
