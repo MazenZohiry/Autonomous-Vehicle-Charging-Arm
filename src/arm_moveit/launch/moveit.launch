@@ -14,7 +14,7 @@
     <arg name="info" value="true"/>
   </include>
 
-	<node pkg="tf2_ros" type="static_transform_publisher" name="camera_frame_broadcaster" args="1 0 0 0 0 0 1 EE camera_link" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="camera_frame_broadcaster" args="1 0 0 0 0 0 1 EE camera_link" />
 
 
   <include file="$(find arm_moveit)/launch/rviz.launch"/>

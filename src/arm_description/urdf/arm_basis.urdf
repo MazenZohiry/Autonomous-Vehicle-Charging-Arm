@@ -382,17 +382,15 @@
     <selfCollide>True</selfCollide>
 </gazebo>
 <gazebo reference="Link4">
-
     <turnGravityOff>true</turnGravityOff>
     <selfCollide>True</selfCollide>
 </gazebo>
  <gazebo reference="Link5">
-
     <turnGravityOff>true</turnGravityOff>
     <selfCollide>True</selfCollide>
 </gazebo>
  <gazebo reference="EE">
-    <turnGravityOff>true</turnGravityOff>
+   <turnGravityOff>true</turnGravityOff>
     <selfCollide>True</selfCollide>
 </gazebo>
 

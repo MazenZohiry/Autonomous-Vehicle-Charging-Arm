@@ -406,6 +406,41 @@ class MoveGroupPythonIntefaceTutorial(object):
     return self.wait_for_state_update(box_is_attached=False, box_is_known=False, timeout=timeout)
 
 
+  def add_mesh(self, timeout=30):
+    # Copy class variables to local variables to make the web tutorials more clear.
+    # In practice, you should use the class variables directly unless you have a good
+    # reason not to.
+    scene = self.scene
+
+    ## BEGIN_SUB_TUTORIAL add_box
+    ##
+    ## Adding Objects to the Planning Scene
+    ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ## First, we will create a box in the planning scene at the location of the left finger:
+    mesh_pose = geometry_msgs.msg.PoseStamped()
+    mesh_pose.header.frame_id = "base_link"
+    mesh_pose.pose.orientation.w = 0
+    mesh_pose.pose.orientation.x = 0
+    mesh_pose.pose.orientation.y = 0
+    mesh_pose.pose.orientation.z = 3.14
+    mesh_pose.pose.position.x = 0  # slightly above the end effector
+    mesh_pose.pose.position.y = 0  #
+    mesh_pose.pose.position.z = 0  #
+    mesh_name = "Tesla"
+    mesh_filename = "//home/mazen/ws_moveit/src/my_arm/src/arm_description/meshes/tesla_model_actual.stl"
+    scene.add_mesh(mesh_name, mesh_pose, mesh_filename, size=(1, 1, 1))
+    
+    mesh_name = "Charger"
+    mesh_filename = "//home/mazen/ws_moveit/src/my_arm/src/arm_description/meshes/Fake-Chargeport.stl"
+    scene.add_mesh(mesh_name, mesh_pose, mesh_filename, size=(1, 1, 1))
+    ## END_SUB_TUTORIAL
+    # Copy local variables back to class variables. In practice, you should use the class
+    # variables directly unless you have a good reason not to.
+    self.mesh_name=mesh_name
+    return self.wait_for_state_update(mesh_is_known=True, timeout=timeout)
+
+
+
 def main():
   try:
     print ""
@@ -418,6 +453,9 @@ def main():
     raw_input()
     tutorial = MoveGroupPythonIntefaceTutorial()
 
+    print "============ Press `Enter` to add mesh to the planning scene ..."
+    raw_input()
+    tutorial.add_mesh()
     print "============ Press `Enter` to execute a movement using a joint state goal ..."
     raw_input()
     tutorial.go_to_joint_state()
