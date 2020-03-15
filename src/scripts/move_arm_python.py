@@ -183,7 +183,11 @@ class MoveGroupPythonIntefaceTutorial(object):
     move_group.set_pose_target(pose_goal)
 
     ## Now, we call the planner to compute the plan and execute it.
-    plan = move_group.go(wait=True)
+    # plan = move_group.go(wait=True)
+    plan = move_group.plan()
+    move_group.execute(plan)
+    # print(plan)
+    
     # Calling `stop()` ensures that there is no residual movement
     move_group.stop()
     # It is always good to clear your targets after planning with poses.
