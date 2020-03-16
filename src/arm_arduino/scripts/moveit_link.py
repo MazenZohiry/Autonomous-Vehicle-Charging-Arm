@@ -71,13 +71,14 @@ class MoveIt_Arduino:
 		wp = []
 		# i = 1
 		# waypoints = cmd_arm.goal.trajectory.joint_trajectory.points
-		for point in cmd_arm.goal.trajectory.joint_trajectory.points:
-			# print("Waypoint number {}: {}".format(i,point.positions))
-			pose = []
-			for pos in point.positions:
-				wp.append(pos)
-			# wp.append(pose)
-			# i += 1
+
+		# for point in cmd_arm.goal.trajectory.joint_trajectory.points:
+		# 	# print("Waypoint number {}: {}".format(i,point.positions))
+		# 	pose = []
+		# 	for pos in point.positions:
+		# 		wp.append(pos)
+
+		
 		# print(type(point.positions))	
 		# print(type(wp))
 		# print(waypoints)
@@ -89,18 +90,23 @@ class MoveIt_Arduino:
 		# dim.stride = 1
 		# waypoints.layout.dim.append(dim)
 
-		# waypoints.layout.dim[0].label = 'waypoints'
-		# waypoints.layout.dim[0].label = 'waypoints'
-		# waypoints.layout.dim = {'label': 'waypoints', 'size': len(cmd_arm.goal.trajectory.joint_trajectory.points),'stride': 1}
+		print("Running Callback")
+		i = 0
+		for point in cmd_arm.goal.trajectory.joint_trajectory.points:
+			if self.count==0:
+				for pos in point.positions:
+					wp.append(pos)
+					i += 1
+				self.count = 1
+
+			else:
+				for pos in point.positions:
+					wp.append(pos-wp[i-6])
+					i+=1
 		
-		# waypoints.data = wp
-		dat = np.zeros((3,2))
-		dat1 = [1.0,2.0,3.0]
-		dat2 = tuple(dat)
 		waypoints = Float64MultiArray(data=wp, layout=MultiArrayLayout(data_offset=len(wp)))
 		print(waypoints)
-		
-		# print("Running Callback")
+		self.count = 0				
 		# if (self.count==0):
 		# 	for i in range(0,len(cmd_arm.position)):
 		# 		print("Retrieving joint {}".format(i))
