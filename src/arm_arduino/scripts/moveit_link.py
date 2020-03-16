@@ -2,13 +2,14 @@
 
 import copy
 import rospy
+import numpy as np
 import moveit_commander
 import moveit_msgs.msg
 from moveit_msgs.msg import ExecuteTrajectoryActionGoal
 from trajectory_msgs.msg import JointTrajectoryPoint
 import geometry_msgs.msg
 from math import pi
-from std_msgs.msg import String, Float64
+from std_msgs.msg import String, Float64, Float64MultiArray, MultiArrayDimension, MultiArrayLayout 
 from moveit_commander.conversions import pose_to_list
 from sensor_msgs.msg import JointState
 
@@ -54,9 +55,9 @@ class MoveIt_Arduino:
 		self.count = 0
 		# self.joint_status = 0
 
-		self.arduino_publisher = rospy.Publisher("arduino_cmd",JointTrajectoryPoint, queue_size=10)
+		self.arduino_publisher = rospy.Publisher("arduino_cmd",Float64MultiArray, queue_size=10)
 
-		self.moveit_subs = rospy.Subscriber("execute_trajectory/goal/goal/trajectory/joint_trajectory/points", JointTrajectoryPoint, self.callback)
+		self.moveit_subs = rospy.Subscriber("execute_trajectory/goal", ExecuteTrajectoryActionGoal, self.callback)
 		self.arm_steps = JointState()
 		print("Initialized Node")
 
@@ -64,22 +65,41 @@ class MoveIt_Arduino:
 		'''
 		Define a function that translates absolute angles to relative positions
 		'''
-		print(cmd_arm)
-		waypoints = JointTrajectoryPoint()
-		#wp = []
+		
+		# print(cmd_arm)
+		# waypoints = Float64MultiArray()
+		wp = []
 		# i = 1
-		waypoints = cmd_arm
-		# for point in cmd_arm.goal.trajectory.joint_trajectory.points:
-		# 	#print("Waypoint number {}: {}".format(i,point.positions))
-		# 	# wp.append(float(point.positions[:]))
-		# 	# i += 1
+		# waypoints = cmd_arm.goal.trajectory.joint_trajectory.points
+		for point in cmd_arm.goal.trajectory.joint_trajectory.points:
+			# print("Waypoint number {}: {}".format(i,point.positions))
+			pose = []
+			for pos in point.positions:
+				wp.append(pos)
+			# wp.append(pose)
+			# i += 1
 		# print(type(point.positions))	
 		# print(type(wp))
-		print(type(waypoints))
-		# waypoints.data= wp
+		# print(waypoints)
+		# waypoints.layout.dim = [len(cmd_arm.goal.trajectory.joint_trajectory.points),6]
+		
+		# dim = MultiArrayDimension('label','size','stride')
+		# dim.label = 'waypoints'
+		# dim.size = len(cmd_arm.goal.trajectory.joint_trajectory.points)
+		# dim.stride = 1
+		# waypoints.layout.dim.append(dim)
 
-		# print(cmd_arm.goal.trajectory.joint_trajectory.points[0].positions)
-		# print(waypoints.data)
+		# waypoints.layout.dim[0].label = 'waypoints'
+		# waypoints.layout.dim[0].label = 'waypoints'
+		# waypoints.layout.dim = {'label': 'waypoints', 'size': len(cmd_arm.goal.trajectory.joint_trajectory.points),'stride': 1}
+		
+		# waypoints.data = wp
+		dat = np.zeros((3,2))
+		dat1 = [1.0,2.0,3.0]
+		dat2 = tuple(dat)
+		waypoints = Float64MultiArray(data=wp, layout=MultiArrayLayout(data_offset=len(wp)))
+		print(waypoints)
+		
 		# print("Running Callback")
 		# if (self.count==0):
 		# 	for i in range(0,len(cmd_arm.position)):
