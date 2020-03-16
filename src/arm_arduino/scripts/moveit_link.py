@@ -4,6 +4,8 @@ import copy
 import rospy
 import moveit_commander
 import moveit_msgs.msg
+from moveit_msgs.msg import ExecuteTrajectoryActionGoal
+from trajectory_msgs.msg import JointTrajectoryPoint
 import geometry_msgs.msg
 from math import pi
 from std_msgs.msg import String, Float64
@@ -52,9 +54,9 @@ class MoveIt_Arduino:
 		self.count = 0
 		# self.joint_status = 0
 
-		self.arduino_publisher = rospy.Publisher("arduino_cmd",JointState, queue_size=10)
+		self.arduino_publisher = rospy.Publisher("arduino_cmd",JointTrajectoryPoint, queue_size=10)
 
-		self.moveit_subs = rospy.Subscriber("execute_trajectory/goal", JointState, self.callback)
+		self.moveit_subs = rospy.Subscriber("execute_trajectory/goal/goal/trajectory/joint_trajectory/points", JointTrajectoryPoint, self.callback)
 		self.arm_steps = JointState()
 		print("Initialized Node")
 
@@ -62,9 +64,22 @@ class MoveIt_Arduino:
 		'''
 		Define a function that translates absolute angles to relative positions
 		'''
+		print(cmd_arm)
+		waypoints = JointTrajectoryPoint()
+		#wp = []
+		# i = 1
+		waypoints = cmd_arm
+		# for point in cmd_arm.goal.trajectory.joint_trajectory.points:
+		# 	#print("Waypoint number {}: {}".format(i,point.positions))
+		# 	# wp.append(float(point.positions[:]))
+		# 	# i += 1
+		# print(type(point.positions))	
+		# print(type(wp))
+		print(type(waypoints))
+		# waypoints.data= wp
 
-		pring(cmd_arm)
-
+		# print(cmd_arm.goal.trajectory.joint_trajectory.points[0].positions)
+		# print(waypoints.data)
 		# print("Running Callback")
 		# if (self.count==0):
 		# 	for i in range(0,len(cmd_arm.position)):
@@ -92,7 +107,7 @@ class MoveIt_Arduino:
 		# self.arm_steps.position = new_cmd
 		# # print(self.arm_steps)
 		# # self.joint_status = 1
-		# self.arduino_publisher.publish(self.arm_steps)
+		self.arduino_publisher.publish(waypoints)
 
 
 # def main():
