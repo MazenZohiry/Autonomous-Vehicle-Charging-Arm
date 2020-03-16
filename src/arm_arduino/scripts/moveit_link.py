@@ -9,7 +9,7 @@ from moveit_msgs.msg import ExecuteTrajectoryActionGoal
 from trajectory_msgs.msg import JointTrajectoryPoint
 import geometry_msgs.msg
 from math import pi
-from std_msgs.msg import String, Float64, Float64MultiArray, MultiArrayDimension, MultiArrayLayout 
+from std_msgs.msg import String, Float64, Float32MultiArray, MultiArrayDimension, MultiArrayLayout 
 from moveit_commander.conversions import pose_to_list
 from sensor_msgs.msg import JointState
 
@@ -55,7 +55,7 @@ class MoveIt_Arduino:
 		self.count = 0
 		# self.joint_status = 0
 
-		self.arduino_publisher = rospy.Publisher("arduino_cmd",Float64MultiArray, queue_size=10)
+		self.arduino_publisher = rospy.Publisher("arduino_cmd",Float32MultiArray, queue_size=10)
 
 		self.moveit_subs = rospy.Subscriber("execute_trajectory/goal", ExecuteTrajectoryActionGoal, self.callback)
 		self.arm_steps = JointState()
@@ -99,12 +99,13 @@ class MoveIt_Arduino:
 					i += 1
 				self.count = 1
 
-			else:
+			elif self.count<4:
+				self.count += 1
 				for pos in point.positions:
 					wp.append(pos-wp[i-6])
 					i+=1
 		
-		waypoints = Float64MultiArray(data=wp, layout=MultiArrayLayout(data_offset=len(wp)))
+		waypoints = Float32MultiArray(data=wp, layout=MultiArrayLayout(data_offset=len(wp)))
 		print(waypoints)
 		self.count = 0				
 		# if (self.count==0):

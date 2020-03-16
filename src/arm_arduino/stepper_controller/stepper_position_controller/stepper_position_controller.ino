@@ -17,11 +17,11 @@
 #include <Stepper.h>
 #include <ros.h>
 #include <sensor_msgs/JointState.h>
-// change this to the number of steps on your motor
+// change this to the number of steps on your motor 2748*4
 
 float pi=3.14;
 int joint_step[6];
-const long StepsPerRev = 2748*4; //
+const long StepsPerRev =  2748*4; //
 //2748*4
 // create an instance of the stepper class, specifying
 // the number of steps of the motor and the pins it's
@@ -41,7 +41,7 @@ void servo_cb(const sensor_msgs::JointState& cmd_msg){
   joint_step[5] = cmd_msg.position[5]/(2*pi)*StepsPerRev; //gripper position <0-180>
   
   Serial.println("clockwise");
-  stepper1.step(joint_step[0]);
+  stepper1.step(StepsPerRev);
   
   delay(5000);
 }
