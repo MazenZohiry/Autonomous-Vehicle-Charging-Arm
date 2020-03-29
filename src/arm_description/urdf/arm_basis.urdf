@@ -306,7 +306,7 @@
         </joint>
         <actuator name="J1_motor">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
+            <mechanicalReduction>10</mechanicalReduction>
         </actuator>
     </transmission>
     <transmission name="trans_J2">
@@ -316,7 +316,7 @@
         </joint>
         <actuator name="J2_motor">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
+            <mechanicalReduction>50</mechanicalReduction>
         </actuator>
     </transmission>
     <transmission name="trans_J3">
@@ -326,7 +326,7 @@
         </joint>
         <actuator name="J3_motor">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
+            <mechanicalReduction>50</mechanicalReduction>
         </actuator>
     </transmission>
     <transmission name="trans_J4">
@@ -336,7 +336,7 @@
         </joint>
         <actuator name="J4_motor">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
+            <mechanicalReduction>14</mechanicalReduction>
         </actuator>
     </transmission>
     <transmission name="trans_J5">
@@ -356,7 +356,7 @@
         </joint>
         <actuator name="J6_motor">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
+            <mechanicalReduction>19</mechanicalReduction>
         </actuator>
     </transmission>
 
@@ -382,15 +382,17 @@
     <selfCollide>True</selfCollide>
 </gazebo>
 <gazebo reference="Link4">
+
     <turnGravityOff>true</turnGravityOff>
     <selfCollide>True</selfCollide>
 </gazebo>
  <gazebo reference="Link5">
+
     <turnGravityOff>true</turnGravityOff>
     <selfCollide>True</selfCollide>
 </gazebo>
  <gazebo reference="EE">
-   <turnGravityOff>true</turnGravityOff>
+    <turnGravityOff>true</turnGravityOff>
     <selfCollide>True</selfCollide>
 </gazebo>
 

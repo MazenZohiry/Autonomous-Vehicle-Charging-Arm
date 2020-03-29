@@ -3,7 +3,7 @@
 
   <!-- Debug mode -->
   <arg name="debug" default="false" />
-
+  
   <!-- Load the SRDF and other configuration files -->
   <include file="$(find arm_moveit)/launch/planning_context.launch"/>
 
@@ -14,15 +14,10 @@
     <arg name="info" value="true"/>
   </include>
 
-	<node pkg="tf2_ros" type="static_transform_publisher" name="camera_frame_broadcaster" args="1 0 0 0 0 0 1 EE camera_link" />
+  <!-- launch control.launch -->
+  <include file="$(find arm_moveit)/launch/ros_controllers.launch"/>
 
-   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-        <rosparam param="source_list">["/joint_states"]</rosparam>
-   </node>
-
-
-  <include file="$(find arm_moveit)/launch/rviz.launch"/>
-
-
+  <!-- Rviz to vizualize robot -->
+  <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d '$(find arm_moveit)/launch/moveit.rviz'" />
 
 </launch>

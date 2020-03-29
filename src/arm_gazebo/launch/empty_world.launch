@@ -11,6 +11,7 @@
         <arg name="debug" value="false"/>
     </include>
 
+
   <arg name="urdf_path" default="$(find arm_description)/urdf/arm_basis.urdf"/>
     
   <!-- send robot urdf to param server -->
@@ -19,7 +20,9 @@
     <!-- Spawn urdf into Gazebo -->
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model arm_description" />
 
-       <!-- launch ros_controllers.launch -->
+  <!-- launch ros_controllers.launch -->
   <include file="$(find arm_moveit)/launch/ros_controllers.launch"/>
+
+
 
 </launch>
