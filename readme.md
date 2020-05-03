@@ -34,10 +34,6 @@ roslaunch arm_control moveit.launch
 You can now use the MoveIt! plugin in Rviz to control the arm.
 ___
 
-**[Gazebo](http://gazebosim.org/)**
-
-![Arm in Gazebo](img/gazebo.png)
-
 **[RViz](http://wiki.ros.org/rviz)** with the **[MoveIt! plugin](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/ros_visualization/visualization_tutorial.html)**
 
 ![Arm in Gazebo](img/Arm_Moveit.png)
