@@ -2,7 +2,7 @@
 
 ![Demo](img/peek.gif)
 
-This repository contains the simulation of a custom robotic arm. This was done in order to gain experience with some nice features of ROS and MoveIt: robot description using [urdf](http://wiki.ros.org/urdf/XML) and [xacro](http://wiki.ros.org/xacro), simulation in [Gazebo](http://gazebosim.org/), joint-space control based on the inverse dynamic model of the arm with help of the [KDL](http://www.orocos.org/kdl) library, trajectory control with [ROS Control](http://wiki.ros.org/joint_trajectory_controller), and finally inverse kinematics and planning with [MoveIt!](http://moveit.ros.org/). 
+This repository contains the simulation of a custom robotic arm. This was done in order to gain experience with some nice features of ROS and MoveIt: robot description using [urdf](http://wiki.ros.org/urdf/XML), simulation in [Gazebo](http://gazebosim.org/), joint-space control based on the inverse dynamic model of the arm with help of the [KDL](http://www.orocos.org/kdl) library, trajectory control with [ROS Control](http://wiki.ros.org/joint_trajectory_controller), and finally inverse kinematics and planning with [MoveIt!](http://moveit.ros.org/). 
 
 ___
 
