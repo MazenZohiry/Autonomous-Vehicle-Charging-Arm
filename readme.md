@@ -40,4 +40,4 @@ ___
 
 **[RViz](http://wiki.ros.org/rviz)** with the **[MoveIt! plugin](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/ros_visualization/visualization_tutorial.html)**
 
-![Arm in Gazebo](img/ARM.png)
+![Arm in Gazebo](img/Arm.png)
